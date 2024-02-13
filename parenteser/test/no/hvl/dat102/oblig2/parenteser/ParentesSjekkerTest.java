@@ -1,12 +1,10 @@
 package no.hvl.dat102.oblig2.parenteser;
-
 import org.junit.jupiter.api.Test;
 
-class ParentesSjekkerTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-	@Test
-	void test() {
-		
+class ParentesSjekkerTest {
 		String s1 = "{ [ ( ) ] }"; //er korrekt
 		String s2 = "{ [ ( ) }";   //er ikke korrekt. Mangler sluttparentes ]
 		String s3 =	"[ ( ) ] }";   //er ikke korrekt. Mangler startparentes {
@@ -23,10 +21,8 @@ class ParentesSjekkerTest {
 		String s7 = "()";
 		
 		//TODO Test om ParentesSjekkeren virker korrekt for eksemplene s1-s7 over.
-		
-	}
-
 	@Test
 	void sjekkParenteser() {
+
 	}
 }
