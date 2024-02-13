@@ -9,11 +9,23 @@ public class ParentesSjekker {
 	private static final Set<String>    PARENTESPAR = Set.of("{}", "()", "[]", "<>");
 	
 	public static boolean sjekkParenteser(String s) {
-		
 		StabelADT<Character> stabel = new TabellStabel<>();
-		
-		//TODO Ca. 10-15 kodelinjer her gir en komplett løsning 
-		return false;
+		for (int i = 0; i < s.length(); i++) {
+			char c = s.charAt(i);
+			if (c == '{' || c == '[' || c == '(' || c == '<') {
+				stabel.push(c);
+			} else if (c == '}' || c == ']' || c == ')' || c == '>') {
+				if (stabel.isEmpty()) {
+					return false; //Mangler åpning
+				}
+				char opening = stabel.pop();
+				if 	((c == ')' && opening != '(') || (c == ']' && opening != '[') || (c == '}' && opening != '{')) {
+					return false;
+				}
+			}
+		}
+		return stabel.isEmpty();
+		//TODO Ca. 10-15 kodelinjer her gir en komplett løsning
 	}
 
 	private static boolean erStartParentes(char c) {

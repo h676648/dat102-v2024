@@ -26,4 +26,7 @@ class ParentesSjekkerTest {
 		
 	}
 
+	@Test
+	void sjekkParenteser() {
+	}
 }
